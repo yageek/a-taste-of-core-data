@@ -1,0 +1,5 @@
+A[[:space:]]Taste[[:space:]]of[[:space:]]Core[[:space:]]Data[[:space:]]#1.playground/Pages filter=lfs diff=lfs merge=lfs -text
+A[[:space:]]Taste[[:space:]]of[[:space:]]Core[[:space:]]Data[[:space:]]#1.playground/Resources filter=lfs diff=lfs merge=lfs -text
+A[[:space:]]Taste[[:space:]]of[[:space:]]Core[[:space:]]Data[[:space:]]#1.playground/contents.xcplayground filter=lfs diff=lfs merge=lfs -text
+A[[:space:]]Taste[[:space:]]of[[:space:]]Core[[:space:]]Data[[:space:]]#1.playground/playground.xcworkspace filter=lfs diff=lfs merge=lfs -text
+coredata_lesson_01.pdf filter=lfs diff=lfs merge=lfs -text

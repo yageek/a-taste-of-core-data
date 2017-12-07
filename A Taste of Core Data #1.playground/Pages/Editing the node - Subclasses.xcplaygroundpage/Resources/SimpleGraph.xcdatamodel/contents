@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Boss" representedClassName="Boss" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="No Name" syncable="YES"/>
+        <relationship name="boss" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boss" inverseName="underBosses" inverseEntity="Boss" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="boss" inverseEntity="Employee" syncable="YES"/>
+        <relationship name="underBosses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Boss" inverseName="boss" inverseEntity="Boss" syncable="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="No Name" syncable="YES"/>
+        <attribute name="speciality" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="boss" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boss" inverseName="employees" inverseEntity="Boss" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Boss" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Employee" positionX="205" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>
