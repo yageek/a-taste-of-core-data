@@ -48,7 +48,6 @@ typealias ValueSetter = @convention(c) (AnyObject, Selector, NSString) -> Void
 // Set default value to prevent crash
 var objKey: UInt8 = 0
 objc_setAssociatedObject(i, &objKey, "Default Value" as NSString, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-
 //: Let's provide some implementation for the setter and the getter
 // Define a setter
 let setter: ValueSetter = { (selfInstance, selector, value) in

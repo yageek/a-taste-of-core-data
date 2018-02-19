@@ -6,10 +6,14 @@ import CoreData
 
 
 // Attributes
-let nameAttr = NSAttributeDescription()
-nameAttr.name = "name"
-nameAttr.attributeType = .stringAttributeType
-nameAttr.defaultValue = "No Name"
+let nameBossAttr = NSAttributeDescription()
+nameBossAttr.name = "name"
+nameBossAttr.attributeType = .stringAttributeType
+nameBossAttr.defaultValue = "No Name For Boss"
+
+let nameEmployeeAttr = NSAttributeDescription()
+nameEmployeeAttr.name = "name"
+nameEmployeeAttr.attributeType = .stringAttributeType
 
 let specialityAttr = NSAttributeDescription()
 specialityAttr.name = "speciality"
@@ -54,15 +58,15 @@ employeeMulRel.maxCount = 0  // To-Many
 employeeMulRel.deleteRule = .nullifyDeleteRule
 employeeMulRel.destinationEntity = employeeDescription
 
+// Assign Relationships
+bossDescription.properties = [employeeMulRel, underBossesRel, bossOneRel, nameBossAttr];
+employeeDescription.properties = [bossesMulRel, nameEmployeeAttr, specialityAttr];
+
+// Specifying inverse
 bossesMulRel.inverseRelationship = employeeMulRel
 employeeMulRel.inverseRelationship = bossesMulRel
 
-// Assign Relationships
-bossDescription.properties = [employeeMulRel, underBossesRel, bossOneRel, nameAttr];
-employeeDescription.properties = [bossesMulRel, nameAttr, specialityAttr];
-
 // Create an object and insert it
-
 let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
 let obj1 = NSManagedObject(entity: bossDescription, insertInto: context)

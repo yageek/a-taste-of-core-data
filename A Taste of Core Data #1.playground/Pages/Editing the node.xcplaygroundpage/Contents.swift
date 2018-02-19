@@ -9,14 +9,18 @@ import CoreData
 let fileURL = Bundle.main.url(forResource: "SimpleGraph", withExtension: "momd")!
 let model = NSManagedObjectModel(contentsOf: fileURL)!
 
+// Load Entities
 let bossDescription = model.entitiesByName["Boss"]!
+let employeeDescription = model.entitiesByName["Employee"]!
 
-// Create an object and insert it
-
+// Create Graph
 let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
+// Create one entity
 let boss = NSManagedObject(entity: bossDescription, insertInto: context)
 
 //: Now we use the primitives to read and modify the name.
+
 
 // Get the default name
 print("Boss name value: \(boss.value(forKey: "name"))")
@@ -27,7 +31,7 @@ boss.setValue("Changed Name with primitives", forKey: "name")
 print("Boss updated name value: \(boss.value(forKey: "name"))")
 
 // Create one employee and add it to the boss employee sets.
-let employeeDescription = model.entitiesByName["Employee"]!
+
 let employee = NSManagedObject(entity: employeeDescription, insertInto: context)
 
 let employeesSet = boss.mutableSetValue(forKey: "employees")

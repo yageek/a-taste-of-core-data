@@ -23,6 +23,8 @@ import CoreData
 
 // Context
 let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+// Node
+let node = NSManagedObject(context: context)
 
 // Description
 let descriptionSimpleNode: NSEntityDescription = {
